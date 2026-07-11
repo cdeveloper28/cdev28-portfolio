@@ -51,6 +51,15 @@ const projects = defineCollection({
       image: image(),
       link: z.string().url(),
       order: z.number(),
+      highlighted: z.boolean().optional(),
+      techStack: z
+        .array(
+          z.object({
+            category: z.string(),
+            items: z.array(z.string()),
+          }),
+        )
+        .optional(),
     }),
 })
 
